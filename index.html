@@ -55,8 +55,29 @@
     <div class="container">
         <h1>👗 בגדי הריון <span class="highlight">איכותיים</span> במחירים משתלמים!</h1>
         <p>✨ הצטרפי לקבוצת הווטסאפ שלנו וקבלי <span class="highlight">מבצעים בלעדיים</span>, הנחות והמלצות על בגדי הריון מעוצבים ונוחים.</p>
-        <img src="תמונת הריון.png" alt="בגדי הריון מעוצבים">
+        <!-- התמונה תשתנה כל 3 שניות -->
+        <img id="slideshow" src="תמונת הריון.png" alt="בגדי הריון מעוצבים">
         <a href="https://chat.whatsapp.com/GiXeQdZ3HLm28AANHkDmie" class="btn btn-whatsapp" target="_blank">📲 הצטרפי עכשיו והתחילי ליהנות!</a>
     </div>
+
+    <script>
+        const images = [
+            "מכנס הריון.png", // התמונה הראשונה
+            "סט הריון.png",      // התמונה השנייה
+            "תמונת הריון.png",  // התמונה השלישית
+            "סט הריון2.png",    // התמונה רביעית
+            "חזיה הריון.png"    // התמונה חמישית
+            // תוכל להוסיף עוד תמונות אם תרצה
+        ];
+
+        let currentIndex = 0;
+
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById('slideshow').src = images[currentIndex];
+        }
+
+        setInterval(changeImage, 3000); // מחליף תמונה כל 3 שניות
+    </script>
 </body>
 </html>
